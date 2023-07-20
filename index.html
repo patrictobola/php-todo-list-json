@@ -33,14 +33,14 @@
                             {{task.text }}
                             <div>
 
-                                <button class="btn btn-danger" @click="removeTask(evt)">Remove</button>
+                                <button class="btn btn-danger">Remove</button>
                             </div>
                         </li>
 
                     </ul>
                     <div class="input-group flex-nowrap">
-                        <input v-model="newTask.text" @keyup.enter="addNewTask(newTask)" type="text"
-                            class="form-control mt-5" placeholder="Add your task here">
+                        <input v-model="newTask.text" @keyup.enter="addNewTask()" type="text" class="form-control mt-5"
+                            placeholder="Add your task here">
                     </div>
                 </div>
             </div>
