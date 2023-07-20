@@ -1,1 +1,14 @@
-["Fare la spesa","Pagare le tasse","Pagare le bollette"]
+[
+    {
+        "text": "Fare la spesa",
+        "done": true
+    },
+    {
+        "text": "Pagare le tasse",
+        "done": true
+    },
+    {
+        "text": "Comprare un regalo ai nostri tutor per la pazienza che hanno con noi",
+        "done": true
+    }
+]
