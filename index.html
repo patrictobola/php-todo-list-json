@@ -27,11 +27,8 @@
 
                 <div class="todo-list w-50 ">
                     <ul class="list-group">
-                        <li class="list-group-item">An item</li>
-                        <li class="list-group-item">A second item</li>
-                        <li class="list-group-item">A third item</li>
-                        <li class="list-group-item">A fourth item</li>
-                        <li class="list-group-item">And a fifth one</li>
+                        <li v-for="task in tasks" :id="i, task" class="list-group-item">{{ task }}</li>
+
                     </ul>
                 </div>
             </div>
