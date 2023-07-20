@@ -27,11 +27,12 @@
 
                 <div class="todo-list w-50 ">
                     <ul class="list-group">
-                        <li v-for="task in tasks" :id="i, task" class="list-group-item">{{ task }}</li>
+                        <li v-for="task in tasks" :id="task" class="list-group-item">{{ task }}</li>
 
                     </ul>
                     <div class="input-group flex-nowrap">
-                        <input v-model="newTask" type="text" class="form-control mt-5" placeholder="Add your task here">
+                        <input v-model="newTask" @keyup.enter="addNewTask(newTask)" type="text"
+                            class="form-control mt-5" placeholder="Add your task here">
                     </div>
                 </div>
             </div>
