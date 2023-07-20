@@ -30,6 +30,9 @@
                         <li v-for="task in tasks" :id="i, task" class="list-group-item">{{ task }}</li>
 
                     </ul>
+                    <div class="input-group flex-nowrap">
+                        <input v-model="newTask" type="text" class="form-control mt-5" placeholder="Add your task here">
+                    </div>
                 </div>
             </div>
         </div>
