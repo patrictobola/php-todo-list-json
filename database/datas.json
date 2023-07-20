@@ -1,14 +1,1 @@
-[
-    {
-        "text": "Fare la spesa",
-        "done": true
-    },
-    {
-        "text": "Pagare le tasse",
-        "done": true
-    },
-    {
-        "text": "Comprare un regalo ai nostri tutor per la pazienza che hanno con noi",
-        "done": true
-    }
-]
+[{"text":"Fare la spesa","done":true},{"text":"Pagare le tasse","done":true},{"text":"Comprare un regalo ai nostri tutor per la pazienza che hanno con noi","done":true},{"text":"asd","done":"false"},{"text":"asd","done":"false"},{"text":"asd","done":"false"}]
