@@ -10,7 +10,8 @@ const app = createApp({
             tasks: [],
             newTask: { 
                 text: '',
-                done: false
+                done: false,
+                id: null
                 }
         }
     },
@@ -33,8 +34,15 @@ const app = createApp({
                 text: '',
                 done: false
                 }
-        }
+        },
     },
+    computed: {
+
+        newId() {
+            let actualId = this.tasks.reduce((result, task) => task.id > result ? task.id : result, 0)
+                return ++actualId;
+            },
+        },
     created(){
         axios.get('http://localhost/php-todo-list-json/api/tasks/').then(res => {
             this.tasks = res.data

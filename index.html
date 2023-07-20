@@ -27,9 +27,14 @@
 
                 <div class="todo-list w-50 ">
                     <ul class="list-group">
-                        <li v-for="task in tasks" :id="task" class="list-group-item"
-                            :class="{'text-decoration-line-through' : task.done}" @click="task.done = !task.done">{{
-                            task.text }}
+                        <li v-for="task, i in tasks" :key="i"
+                            class="list-group-item d-flex justify-content-between align-items-center"
+                            :class="{'text-decoration-line-through' : task.done}" @click="task.done = !task.done">
+                            {{task.text }}
+                            <div>
+
+                                <button class="btn btn-danger" @click="removeTask(evt)">Remove</button>
+                            </div>
                         </li>
 
                     </ul>
