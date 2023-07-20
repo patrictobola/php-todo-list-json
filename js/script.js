@@ -15,6 +15,8 @@ const app = createApp({
                 }
         }
     },
+
+
     methods: {
         addNewTask(){
 
@@ -40,14 +42,29 @@ const app = createApp({
                 id: null
                 }
         },
-    },
-    computed: {
+        // removeTask(target){
+        //     const config = {
+        //         headers: { 'Content-Type': 'multipart/form-data'}
+        //     }
 
+        //     axios.post('http://localhost/php-todo-list-json/api/tasks/', data, config)
+        //     .then(res => {
+        //         this.tasks = this.tasks.filter(task => target !== task.id)
+        //     })
+              
+        //   },
+    },
+
+
+    computed: {
         newId() {
             let actualId = this.tasks.reduce((result, task) => task.id > result ? task.id : result, 0)
                 return ++actualId;
             },
         },
+
+
+
     created(){
         axios.get('http://localhost/php-todo-list-json/api/tasks/').then(res => {
             this.tasks = res.data
