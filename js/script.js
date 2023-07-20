@@ -1,4 +1,4 @@
-console.log('JS OK', Vue)
+
 
 // Estrapolo il metodo createApp 
 const { createApp } = Vue;
@@ -7,8 +7,15 @@ const { createApp } = Vue;
 const app = createApp({
     data(){
         return {
-            vue: "ok"
+            tasks: [],
         }
-    }
+    },
+    created(){
+        axios.get('http://localhost/php-todo-list-json/api/tasks/').then(res => {
+            this.tasks = res.data
+          }).catch(err => {
+            console.log(err.message)
+          })
+    },
 })
 app.mount("#app");
