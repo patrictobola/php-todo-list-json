@@ -27,7 +27,10 @@
 
                 <div class="todo-list w-50 ">
                     <ul class="list-group">
-                        <li v-for="task in tasks" :id="task" class="list-group-item">{{ task.text }}</li>
+                        <li v-for="task in tasks" :id="task" class="list-group-item"
+                            :class="{'text-decoration-line-through' : task.done}" @click="task.done = !task.done">{{
+                            task.text }}
+                        </li>
 
                     </ul>
                     <div class="input-group flex-nowrap">
