@@ -28,6 +28,11 @@ const app = createApp({
             .then(res => {
                 this.tasks.push(newTask)
             })
+            this.newTask = 
+                { 
+                text: '',
+                done: false
+                }
         }
     },
     created(){
