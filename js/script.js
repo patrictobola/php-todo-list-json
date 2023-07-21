@@ -23,22 +23,20 @@ const app = createApp({
 
             axios.post('http://localhost/php-todo-list-json/api/tasks/', data, config)
             .then(res => {
-                console.log(res.data)
                 this.tasks.push(res.data)
                 this.newTask = '';
             })
         },
-        // removeTask(target){
-        //     const config = {
-        //         headers: { 'Content-Type': 'multipart/form-data'}
-        //     }
+        toggleTask(idTask){
+            const data = { id: idTask }
+            const config = { headers: { 'Content-Type': 'multipart/form-data'} }
 
-        //     axios.post('http://localhost/php-todo-list-json/api/tasks/', data, config)
-        //     .then(res => {
-        //         this.tasks = this.tasks.filter(task => target !== task.id)
-        //     })
-              
-        //   },
+            axios.post('http://localhost/php-todo-list-json/api/tasks/toggle/', data, config)
+            .then(res => {
+                this.tasks = res.data;
+                console.log(res.data)
+            })
+        }
     },
 
 
