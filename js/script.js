@@ -8,11 +8,7 @@ const app = createApp({
     data(){
         return {
             tasks: [],
-            newTask: { 
-                text: '',
-                done: false,
-                id: null
-                }
+            newTask: ''
         }
     },
 
@@ -20,27 +16,17 @@ const app = createApp({
     methods: {
         addNewTask(){
 
-            const data = {
-                tasks: { 
-                    text: this.newTask.text,
-                    done: false,
-                    id: this.newId
-                    }
-            }
+            const data = { task: this.newTask }
             const config = {
                 headers: { 'Content-Type': 'multipart/form-data'}
             }
 
             axios.post('http://localhost/php-todo-list-json/api/tasks/', data, config)
             .then(res => {
-                this.tasks.push(data.tasks)
+                console.log(res.data)
+                this.tasks.push(res.data)
+                this.newTask = '';
             })
-            this.newTask = 
-                { 
-                text: '',
-                done: false,
-                id: null
-                }
         },
         // removeTask(target){
         //     const config = {
