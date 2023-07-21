@@ -34,7 +34,15 @@ const app = createApp({
             axios.post('http://localhost/php-todo-list-json/api/tasks/toggle/', data, config)
             .then(res => {
                 this.tasks = res.data;
-                console.log(res.data)
+            })
+        },
+        deleteTask(idTask){
+            const data = { id: idTask }
+            const config = { headers: { 'Content-Type': 'multipart/form-data'} }
+
+            axios.post('http://localhost/php-todo-list-json/api/tasks/delete/', data, config)
+            .then(res => {
+                this.tasks = res.data;
             })
         }
     },
